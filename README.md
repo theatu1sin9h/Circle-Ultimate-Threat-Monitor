@@ -1,68 +1,68 @@
-# 🌐 CIrcLe - Advanced Threat Operations
+<p align="center">
+  <img src="frontend/public/soc-logo.jpg" width="150" alt="CIrcLe Logo" style="filter: invert(1);"/>
+</p>
 
-A high-end, futuristic **3D Cybersecurity Network Monitoring Platform** and Security Operations Center (SOC) simulation. Designed for presentations, hackathons, and demonstrations, **CIrcLe** utilizes WebGL and modern web technologies to create a stunning, interactive storyline environments.
+<h1 align="center">CIrcLe — Advanced Threat Operations</h1>
 
-## ✨ Features
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19.0-blue?style=for-the-badge&logo=react" alt="React" />
+  <img src="https://img.shields.io/badge/Three.js-WebGL-black?style=for-the-badge&logo=three.js" alt="Three.js" />
+  <img src="https://img.shields.io/badge/Flask-Python Backend-green?style=for-the-badge&logo=flask" alt="Flask" />
+  <img src="https://img.shields.io/badge/TailwindCSS-v4.0-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind" />
+</p>
 
-- **3D Network Visualization (WebGL)**: Built with React Three Fiber. Watch as the central Core Router pulses with data, while dynamic Edge Nodes shift colors in real-time based on their network trust scores.
-- **Cyberpunk Aesthetic**: Deep dark mode, neon glowing `Bloom` post-processing effects, glassmorphic UI overlays, and advanced micro-animations.
-- **Interactive Defense Matrix**: A fully functional mock SOC panel. Change your Firewall Rules, DDoS Mitigation, Geo-Block Level, and IDS/IPS Profiles on the fly.
-- **Dynamic Threat Policies**: The system reacts to your configurations! If you set the firewall to "Zero-Trust", any injected unknown network devices instantly bypass the warning phase and spawn as highly-critical **flashing red threats**. If you switch to "Permissive", they blink white as **unprotected nodes**.
-- **Integrated Floating Terminal**: Press ``CTRL + ` `` to open a draggable, framer-motion built SOC terminal. Execute deep mockup commands like `nmap [ip]`, `ping`, `whois`, `traceroute`, and `reset` to clear the network history.
-- **Web Audio API Engine**: Completely native synthesized audio. Enjoy sci-fi hover bloops, interface clicks, and an aggressive sweeping alarm siren when attack behaviors are detected.
-- **Director's "Demo Mode"**: A hidden presenter panel that allows you to seamlessly inject "Unknown Devices", trigger simulated port scans/attacks, and narrate a powerful cybersecurity presentation.
+## 🌐 Overview
+**CIrcLe** (formerly SecureEdge) is a state-of-the-art WebGL powered cybersecurity dashboard. Designed for high-fidelity situational awareness, it transforms raw network traffic analytics into a fully interactive 3D command center.
 
-## 🏗️ Technology Stack
+<p align="center">
+  <img src="docs/dashboard.webp" alt="System Dashboard" width="800" />
+</p>
 
-**Frontend (Client Presentation)**:
-- **React 19** + **Vite**
-- **Tailwind CSS v4** (Custom Cyberpunk Neon utility classes)
-- **Three.js** & **@react-three/fiber** & **@react-three/drei**
-- **Framer Motion** (Drag-and-drop terminal, UI transitions)
-- **Lucide-React** (Futuristic Iconography)
+## ⚡ Core Systems Architecture
 
-**Backend (State & Simulation Engine)**:
-- **Python Flask** (Serves REST API routes)
-- **flask-cors**
-- In-memory mock database and live SOC log-event queuing system.
+### 1. 3D WebGL Network Mapping
+Built top-to-bottom using `@react-three/fiber` and `@react-three/drei`. The engine renders the central Core Router and dynamic edge nodes, utilizing custom Bloom post-processing to achieve the glowing cyberpunk aesthetic. Nodes breathe, pulse, and physically react to network traffic latency.
 
-## 🚀 Installation & Setup
+### 2. Live Threat Intelligence (Defense Matrix)
+An interactive Security Operations Center (SOC) panel that allows operators to enforce live rules:
+- **Intrusion Prevention (IDS/IPS)**: Set to *Aggressive* to enable Active Auto-Remediation timeouts.
+- **Firewall Rules**: Switch between *Permissive*, *Default Block*, *Zero-Trust*, and *Lockdown*.
+- **Volumetric Shielding**: Enable *Always-On* DDoS mitigation to automatically absorb attacks.
+- **Geo-Fencing**: Configure global IP isolation.
 
-To run CIrcLe locally, you will need to start both the Python backend state manager and the Vite frontend server.
+### 3. Asynchronous Terminal Interface
+An integrated OS-level terminal simulation built with `framer-motion` for drag-and-drop kinetics. Includes custom recursive parsers mimicking genuine network commands:
+- `nmap [ip]`: Executes a simulated port discovery.
+- `ping [ip]`: Streams simulated ICMP echo replies.
+- `whois [domain]`: Pulls mock registration data.
+- `traceroute [ip]`: Simulates network hop latency.
+- `reset`: Flushes all SOC alerts and restores the 3D grid.
 
-### 1. Backend Setup
-The backend manages the network state, device injection, live logging, and dynamic security rules.
+## 🚀 Installation & Build Guide
+
+### Prerequisites
+- Python 3.10+
+- Node.js v15+
+
+### Initialization
+To run the full stack locally, launch the data engine and the WebGL renderer simultaneously.
+
 ```bash
+# 1. Start the Python State Engine
 cd backend
 python -m venv venv
-
-# Windows
-venv\Scripts\activate
-# Mac/Linux
-source venv/bin/activate
-
-pip install Flask flask-cors
+# Windows: venv\Scripts\activate | Unix: source venv/bin/activate
+pip install -r requirements.txt
 python app.py
-```
-*The backend should now run on `http://localhost:5000`.*
 
-### 2. Frontend Setup
-The frontend renders the 3D WebGL engine and the user interface.
-```bash
+# 2. Start the WebGL Frontend Client
 cd frontend
 npm install
 npm run dev
 ```
-*The frontend should now run on `http://localhost:5173`.*
 
-## 📖 How to Run the Presentation Storyline
+## 🛡️ Dynamic Response Engine
+The backend engine (Flask) monitors the **Defense Matrix** state. If a threat enters the system while the Matrix enforces `Zero-Trust`, the backend instantly overrides standard trust protocols, drops the payload's score to critical, and commands the Three.js renderer to paint the node red and pulse aggressively. It is a fully closed-loop reactive pipeline built for visual storytelling.
 
-CIrcLe was built specifically to be demonstrated. Follow this script for a perfect presentation:
-
-1. **Initialization**: Open `localhost:5173`. Marvel at the Matrix-style hacking text and glowing logo. Click **"INITIALIZE CONNECTION"**.
-2. **Observe**: Point out the live System Logs, Threat Indicators, and the spinning 3D network.
-3. **Tighten Security**: Click "DEMO MODE" (bottom left). Adjust the *Defense Matrix* dropdowns on the right panel (e.g. change Firewall to *Zero-Trust*). Note the audible click and the new system log appearing below it in real-time.
-4. **The Breach**: In the Demo Menu, click **"1. Inject Unknown Device"**. Watch the red node spawn instantly in the 3D space, and a CRITICAL alert pop up.
-5. **The Investigation**: Press ``CTRL + ` `` to open the terminal. Drag it nicely. Type `nmap 192.168.1.144` to "scan" the attacker. 
-6. **The Defense**: Click on the flashing Red Node in the 3D space. Click **"BLOCK DEVICE"**. Watch the node power down, turn grey, and disconnect from the network.
-7. **Reset**: Type `reset` in the terminal to clear the history and prepare for the next audience!
+---
+*Built for the next generation of Cyber Intelligence.*
